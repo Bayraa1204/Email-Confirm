@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(https://media.istockphoto.com/id/958693744/vector/abstract-red-light-trail-on-blue-background.jpg?s=1024x1024&w=0&k=20&c=NMWPgT3zSw2UxluLVNmhoQUcOuA_FgzQIvw5aDGQkVc=);
+  background-size: cover;
+}
+.header {
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(65, 132, 213, 0.807);
+}
+.text {
+  font-size: 25px;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(65, 132, 213, 0.807);
+}
+#email-container {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to right, rgba(53, 53, 199, 0.696), purple);
+  border: 1px solid rgba(54, 97, 206, 0.669);
+  gap: 25px;
+  align-items: center;
+}
+.input {
+  border-bottom: 1px solid rgba(211, 211, 211, 0.691);
+  padding-bottom: 70px;
+  width: 460px;
+}
+.inputs {
+  height: 30px;
+  width: 460px;
+  background-color: rgba(44, 180, 211, 0.594);
+  border: 1px solid rgba(255, 255, 255, 0.327);
+  border-radius: 5px;
+  font-size: 17.5px;
+}
+#button {
+  height: 40px;
+  width: 460px;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(65, 132, 213, 0.807);
+  background-color: rgba(176, 52, 176, 0.475);
+  border: 1px solid rgba(255, 255, 255, 0.327);
+  border-radius: 5px;
+  font-size: 17.5px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+#button:hover {
+  color: rgb(44, 180, 211);
+  background-color: rgba(205, 58, 205, 0.475);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(23, 90, 171, 0.807) inset !important;
+}
+.checkBox {
+  width: 20px;
+}
