@@ -7,13 +7,13 @@ const btn = document.getElementById("button");
 
 let isItTrue = false;
 
-let isGood = 0
+let isGood = 0;
 
 function isValidEmail() {
   const isEmailValid = email.value;
   if (isEmailValid.includes("@")) {
     alert("Perfect");
-    isGood += 1
+    isGood += 1;
   } else {
     alert("Email is Invalid");
   }
@@ -28,7 +28,7 @@ function isValidPhoneNum() {
       alert("Phone number is Too Long");
     } else {
       alert("Perfect");
-      isGood += 1
+      isGood += 1;
     }
   } else {
     alert("Phone number is Invalid");
@@ -41,7 +41,7 @@ function isValidPass() {
     alert("Password is Too Short");
   } else {
     alert("Perfect");
-    isGood += 1
+    isGood += 1;
   }
   if (itIncludes(isPassValid)) {
     alert("Please add more symbols and letters.");
@@ -51,13 +51,13 @@ function isValidPass() {
     alert("Add a UpperCase Letter");
   }
 }
-         
+
 btn.addEventListener("click", function () {
   isValidEmail();
   isValidPhoneNum();
   isValidPass();
-  if(isGood == 3){
-    window.location.href = '/TodoList/index.html'
+  if (isGood == 3) {
+    window.location.href = "todo-list-lovat-eight-97.vercel.app";
   }
 });
 
