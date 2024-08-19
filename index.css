@@ -72,3 +72,6 @@ input:-webkit-autofill:active {
 .checkBox {
   width: 20px;
 }
+input[type="checkbox"] {
+  accent-color: purple;
+}
