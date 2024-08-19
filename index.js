@@ -58,6 +58,7 @@ btn.addEventListener("click", function () {
   isValidPass();
   if (isGood == 3) {
     window.location.href = "todo-list-lovat-eight-97.vercel.app";
+    isGood = 0;
   }
 });
 
