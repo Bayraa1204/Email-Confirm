@@ -57,7 +57,7 @@ btn.addEventListener("click", function () {
   isValidPhoneNum();
   isValidPass();
   if (isGood == 3) {
-    window.location.href = "./secondindex.html";
+    window.location.href = "./todoList.html";
     isGood = 0;
   }
 });
