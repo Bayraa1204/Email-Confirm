@@ -57,7 +57,7 @@ btn.addEventListener("click", function () {
   isValidPhoneNum();
   isValidPass();
   if (isGood == 3) {
-    window.location.href = "todo-list-lovat-eight-97.vercel.app";
+    window.location.href = "./secondindex.html";
     isGood = 0;
   }
 });
