@@ -56,7 +56,7 @@ btn.addEventListener("click", function () {
   isValidEmail();
   isValidPhoneNum();
   isValidPass();
-  if (isGood > 3) {
+  if (isGood >= 3) {
     window.location.href = "./todoList.html";
     isGood = 0;
   }
