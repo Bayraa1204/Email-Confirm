@@ -12,7 +12,7 @@ let isGood = 0;
 function isValidEmail() {
   const isEmailValid = email.value;
   if (isEmailValid.includes("@")) {
-    alert("Perfect");
+    alert("Email Perfect");
     isGood += 1;
   } else {
     alert("Email is Invalid");
@@ -27,7 +27,7 @@ function isValidPhoneNum() {
     } else if (isPhoneValid.length > 8) {
       alert("Phone number is Too Long");
     } else {
-      alert("Perfect");
+      alert("Phone number Perfect");
       isGood += 1;
     }
   } else {
@@ -40,7 +40,7 @@ function isValidPass() {
   if (isPassValid.length < 8) {
     alert("Password is Too Short");
   } else {
-    alert("Perfect");
+    alert("Password Perfect");
     isGood += 1;
   }
   if (itIncludes(isPassValid)) {
@@ -56,7 +56,7 @@ btn.addEventListener("click", function () {
   isValidEmail();
   isValidPhoneNum();
   isValidPass();
-  if (isGood == 3) {
+  if (isGood > 3) {
     window.location.href = "./todoList.html";
     isGood = 0;
   }
