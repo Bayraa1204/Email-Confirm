@@ -59,6 +59,9 @@ btn.addEventListener("click", function () {
   if (isGood >= 3) {
     window.location.href = "./todoList.html";
     isGood = 0;
+    localStorage.setItem("email", email.value);
+    localStorage.setItem("password", password.value);
+    localStorage.setItem("phone", phoneNumber.value);
   }
 });
 

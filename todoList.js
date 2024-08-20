@@ -58,7 +58,8 @@ buttonCreate.addEventListener("click", function () {
     textContainer.className = "text-container";
     textContainer.id = `${idCount}t`;
     const buttonDelete = document.createElement("button");
-    buttonDelete.id = "buttonDelete";
+    buttonDelete.id = `${idCount}bd`;
+    buttonDelete.className = "buttonDelete";
 
     const paragraph = document.createElement("div");
     paragraph.type = "edit";
@@ -174,6 +175,7 @@ buttonCreate.addEventListener("click", function () {
       const done = document.getElementById(`${idCount}d`);
       const edit = document.getElementById(`${idCount}e`);
       const theId = document.getElementById(`${idCount}`);
+      const deleteBtn = document.getElementById(`${idCount}bd`);
       const taskDone = document.getElementById(`${idCount}t`);
       taskDone.style.border = "1px solid lime";
       taskDone.style.borderRadius = "5px";
@@ -181,6 +183,30 @@ buttonCreate.addEventListener("click", function () {
       completed.insertBefore(theId, completed.children[0]);
       edit.remove();
       done.remove();
+      const back = document.createElement("button");
+      back.id = `back`;
+      back.addEventListener("click", function () {
+        list.appendChild(theId);
+        list.insertBefore(theId, list.children[0]);
+        back.remove();
+        deleteBtn.remove();
+        taskDone.appendChild(edit);
+        taskDone.appendChild(done);
+        taskDone.appendChild(deleteBtn);
+        taskDone.style.border = "none";
+        if (completed.innerHTML == "") {
+          cont = 0;
+          const completeText = document.getElementById("ct");
+          completeText.style.animation = "popout 0.5s ease";
+          setTimeout(function () {
+            completeText.remove();
+          }, 500);
+        }
+      });
+      deleteBtn.remove;
+      back.innerHTML = "Back";
+      taskDone.appendChild(back);
+      taskDone.appendChild(deleteBtn);
       if (cont == 0) {
         const completedContainer =
           document.getElementsByClassName("completed")[0];
@@ -199,3 +225,18 @@ buttonCreate.addEventListener("click", function () {
     }
   }
 });
+const email = localStorage.getItem("email");
+const password = localStorage.getItem("password");
+const PhoneNum = localStorage.getItem("phone");
+
+const firstLetter = email[0].toUpperCase();
+const profilePic = document.getElementById("profilePic");
+profilePic.innerHTML = firstLetter;
+
+const todoEmail = document.getElementById("Email");
+const todoPass = document.getElementById("Password");
+const todoPhone = document.getElementById("PhoneNum");
+
+todoEmail.innerHTML = `Email : ${email}`;
+todoPass.innerHTML = `Password : ${password}`;
+todoPhone.innerHTML = `PhoneNumber : ${PhoneNum}`;
