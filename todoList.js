@@ -1,5 +1,5 @@
 const list = document.getElementById("list");
-const buttonCreate = document.getElementById("buttonCreate");
+const buttonCreate = document.getElementById("button-29");
 const input = document.getElementById("input");
 const completed = document.getElementById("completed");
 
@@ -70,12 +70,12 @@ buttonCreate.addEventListener("click", function () {
 
     const edit_button = document.createElement("button");
     edit_button.type = "submit";
-    edit_button.className = "editButton";
+    edit_button.className = "button-77";
     edit_button.innerHTML = "Edit";
     edit_button.id = `${idCount}e`;
     const end_button = document.createElement("button");
     end_button.type = "submit";
-    end_button.className = "endButton";
+    end_button.className = "button-77";
     end_button.innerHTML = "Done";
     end_button.id = `${idCount}d`;
 
@@ -100,12 +100,12 @@ buttonCreate.addEventListener("click", function () {
         completeText.style.animation = "popout 0.5s ease";
         setTimeout(function () {
           completeText.remove();
-        }, 500);
+        }, 1000);
       }
       theId.style.animation = "popout 0.5s ease";
       setTimeout(function () {
         theId.remove();
-      }, 500);
+      }, 1000);
     }
 
     list.appendChild(dateAndContainer);
@@ -177,7 +177,6 @@ buttonCreate.addEventListener("click", function () {
       const theId = document.getElementById(`${idCount}`);
       const deleteBtn = document.getElementById(`${idCount}bd`);
       const taskDone = document.getElementById(`${idCount}t`);
-      taskDone.style.border = "1px solid lime";
       taskDone.style.borderRadius = "5px";
       completed.appendChild(theId);
       completed.insertBefore(theId, completed.children[0]);
@@ -185,6 +184,7 @@ buttonCreate.addEventListener("click", function () {
       done.remove();
       const back = document.createElement("button");
       back.id = `back`;
+      back.className = "button-77";
       back.addEventListener("click", function () {
         list.appendChild(theId);
         list.insertBefore(theId, list.children[0]);
@@ -228,15 +228,29 @@ buttonCreate.addEventListener("click", function () {
 const email = localStorage.getItem("email");
 const password = localStorage.getItem("password");
 const PhoneNum = localStorage.getItem("phone");
+const hello = document.getElementById("hello");
+const userName = localStorage.getItem("user");
 
-const firstLetter = email[0].toUpperCase();
-const profilePic = document.getElementById("profilePic");
-profilePic.innerHTML = firstLetter;
+function profile() {
+  let name = email.replace("@gmail.com", ".");
+  hello.innerHTML = `Hello! ${userName}`;
+  const firstLetter = email[0].toUpperCase();
+  const profilePic = document.getElementById("profilePic");
+  profilePic.innerHTML = firstLetter;
 
-const todoEmail = document.getElementById("Email");
-const todoPass = document.getElementById("Password");
-const todoPhone = document.getElementById("PhoneNum");
+  const todoEmail = document.getElementById("Email");
+  const todoPhone = document.getElementById("PhoneNum");
+  const todoPass = document.getElementById("Password");
 
-todoEmail.innerHTML = `Email : ${email}`;
-todoPass.innerHTML = `Password : ${password}`;
-todoPhone.innerHTML = `PhoneNumber : ${PhoneNum}`;
+  let checks = "";
+  setInterval(passwordCheck(), 100);
+  function passwordCheck() {
+    for (let i = 0; i < password.length; i++) {
+      checks += "*";
+    }
+  }
+  todoEmail.innerHTML = `Email : ${email}`;
+  todoPhone.innerHTML = `PhoneNumber : +976 ${PhoneNum}`;
+  todoPass.innerHTML = `Pass : ${checks}`;
+}
+setInterval(profile, 200);

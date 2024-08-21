@@ -2,6 +2,7 @@ const email = document.getElementById("email");
 const phoneNumber = document.getElementById("Phonenumber");
 const password = document.getElementById("password");
 const checkBox = document.getElementById("checkbox");
+const userName = document.getElementById("UserName");
 
 const btn = document.getElementById("button");
 
@@ -18,7 +19,19 @@ function isValidEmail() {
     alert("Email is Invalid");
   }
 }
-
+function isValidUser() {
+  const isUserValid = userName.value;
+  if (
+    isUserValid.length == 0 ||
+    isUserValid == `<div><br></div><div><br></div>` ||
+    isUserValid.includes("&nbsp;")
+  ) {
+    alert("Username is Empty");
+  } else {
+    alert("UserName is Perfect");
+    isGood += 1;
+  }
+}
 function isValidPhoneNum() {
   const isPhoneValid = phoneNumber.value;
   if (itIncludes(isPhoneValid)) {
@@ -53,12 +66,14 @@ function isValidPass() {
 }
 
 btn.addEventListener("click", function () {
+  isValidUser();
   isValidEmail();
   isValidPhoneNum();
   isValidPass();
-  if (isGood >= 3) {
+  if (isGood >= 4) {
     window.location.href = "./todoList.html";
     isGood = 0;
+    localStorage.setItem("user", userName.value);
     localStorage.setItem("email", email.value);
     localStorage.setItem("password", password.value);
     localStorage.setItem("phone", phoneNumber.value);

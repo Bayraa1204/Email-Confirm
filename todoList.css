@@ -13,8 +13,8 @@ body {
   position: relative;
 }
 .container {
-  width: 500px;
-  height: 700px;
+  width: 700px;
+  height: 900px;
   background-image: linear-gradient(
     to bottom right,
     rgba(53, 53, 199, 0.696),
@@ -51,7 +51,7 @@ body {
 }
 #input {
   height: 35px;
-  width: 360px;
+  width: 500px;
   background-color: rgb(145, 26, 145);
   border: 1px solid rgb(167, 20, 167);
   border-radius: 8px;
@@ -60,6 +60,7 @@ body {
   color: rgba(255, 255, 255, 0.716);
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.461);
 }
 #input::after {
   content: "";
@@ -76,22 +77,6 @@ body {
 #input:hover {
   opacity: 1;
 }
-#buttonCreate {
-  width: 35px;
-  height: 35px;
-  background-color: rgb(51, 51, 191);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.525);
-  border: 0.5px solid rgba(255, 255, 255, 0.525);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s;
-  border-radius: 5px;
-}
-#buttonCreate:hover {
-  color: white;
-  border: 0.5px solid white;
-  cursor: pointer;
-}
 #list {
   width: 85%;
   height: 345px;
@@ -107,19 +92,23 @@ body {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   width: 300px;
-  height: 100%;
+  height: 35px;
   display: flex;
   align-items: center;
   background-color: inherit;
   margin-left: 3px;
+  padding-right: 140px;
 }
 .text-container {
-  width: 420px;
+  width: 590px;
   display: flex;
   align-items: center;
   background-color: rgb(145, 26, 145);
   border: 1px solid rgb(167, 20, 167);
   border-radius: 8px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.344);
+  position: relative;
+  z-index: 999;
 }
 .buttonDelete {
   height: 35px;
@@ -130,62 +119,36 @@ body {
   border: none;
   opacity: 0.8;
   transition: 0.5s;
+  margin-right: 5px;
 }
 .buttonDelete:hover {
   opacity: 1;
   cursor: pointer;
 }
-.editButton {
-  width: 35px;
-  height: 35px;
-  background-color: rgb(51, 51, 191);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.525);
-  border: 0.5px solid rgba(255, 255, 255, 0.525);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s;
-  border-radius: 5px;
-}
-.editButton:hover {
-  color: white;
-  border: 0.5px solid white;
-  cursor: pointer;
-}
-.endButton {
-  width: 35px;
-  height: 35px;
-  background-color: rgb(51, 51, 191);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.525);
-  border: 0.5px solid rgba(255, 255, 255, 0.525);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s;
-  border-radius: 5px;
-}
-.endButton:hover {
-  color: white;
-  border: 0.5px solid white;
-  cursor: pointer;
+#ct {
+  position: absolute;
 }
 .completed {
-  width: 425px;
-  height: 200px;
+  width: 595px;
+  height: 350px;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   font-weight: 550;
   opacity: 0.8;
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 10px;
+  position: relative;
 }
 #completed {
   overflow: scroll;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 425px;
-  height: 171px;
+  width: 595px;
+  height: 400px;
+  margin-top: 50px;
 }
 .check {
   width: 20px;
@@ -198,11 +161,14 @@ body {
 .dateAndContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .date {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.718);
   font-family: Arial, Helvetica, sans-serif;
+  width: 590px;
+  margin-left: 5px;
 }
 .popin {
   animation: popin 1s ease;
@@ -258,32 +224,24 @@ body {
   }
 }
 #back {
-  width: 35px;
-  height: 35px;
-  background-color: rgb(51, 51, 191);
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.525);
-  border: 0.5px solid rgba(255, 255, 255, 0.525);
-  font-family: Arial, Helvetica, sans-serif;
-  transition: 0.5s;
-  border-radius: 5px;
   margin-left: 40px;
-  margin-right: 10px;
+  margin-right: 5px;
 }
-#back:hover {
-  color: white;
-  border: 0.5px solid white;
-  cursor: pointer;
+.profilePic-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 .profile {
   position: absolute;
-  right: 290px;
-  width: 300px;
+  right: 120px;
+  width: 500px;
   height: 500px;
   border-radius: 20px;
   background-image: linear-gradient(to right, rgba(53, 53, 199, 0.696), purple);
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 .profile::after {
@@ -312,8 +270,9 @@ body {
   align-items: center;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
-  color: #decae3;
+  color: #f2f2f2fe;
   font-weight: 300;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.191);
 }
 #profilePic::after {
   content: "";
@@ -323,24 +282,198 @@ body {
   filter: blur(2.5em);
   z-index: -999;
 }
-#Email {
-  font-family: Arial, Helvetica, sans-serif;
+.hello {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: white;
-  font-size: 15px;
+  font-size: 28px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.07);
+}
+.basicText {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.07);
+}
+.info {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#Email {
 }
 #Password {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
 }
 #PhoneNum {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  font-size: 15px;
-  display: flex;
-  flex-direction: column;
+}
+
+#button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    rgba(53, 53, 199, 0.696),
+    purple 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+}
+#button-29::after {
+  content: "";
+  position: absolute;
+  inset: -0.925em;
+  background: linear-gradient(to top left, rgba(53, 53, 199, 0.696), purple);
+  filter: blur(2.5em);
+  z-index: -999;
+}
+#button-29:focus {
+  box-shadow: purple 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, purple 0 -3px 0 inset;
+}
+
+#button-29:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, purple 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#button-29:active {
+  box-shadow: rgb(128, 14, 166) 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.button-77 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: Eina01, sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0;
+  min-height: 35px;
+  outline: none;
+  overflow: visible;
+  padding: 1px 6px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .button-77 {
+    padding: 1px 10px;
+  }
+}
+
+.button-77:before,
+.button-77:after {
+  border-radius: 80px;
+}
+
+.button-77:before {
+  background-color: rgb(135, 36, 178);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.button-77:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, blue 0, purple 100%);
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.button-77:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.button-77:active:not(:disabled) {
+  color: #ccc;
+}
+
+.button-77:active:not(:disabled):after {
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    linear-gradient(92.83deg, purple 0, blue 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.button-77:disabled {
+  cursor: default;
+  opacity: 0.24;
 }

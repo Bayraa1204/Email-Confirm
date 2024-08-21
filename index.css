@@ -15,39 +15,55 @@ body {
   margin-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgba(65, 132, 213, 0.807);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.07);
 }
 .text {
   font-size: 25px;
   margin-top: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: rgba(65, 132, 213, 0.807);
 }
 #email-container {
-  width: 500px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(to right, rgba(53, 53, 199, 0.696), purple);
   border: 1px solid rgba(54, 97, 206, 0.669);
   gap: 25px;
   align-items: center;
+  position: relative;
+}
+#email-container::after {
+  content: "";
+  position: absolute;
+  inset: -0.925em;
+  background: linear-gradient(to top left, rgba(53, 53, 199, 0.696), purple);
+  filter: blur(2.5em);
+  z-index: -999;
 }
 .input {
   border-bottom: 1px solid rgba(211, 211, 211, 0.691);
   padding-bottom: 70px;
-  width: 460px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .inputs {
   height: 30px;
-  width: 460px;
-  background-color: rgba(44, 180, 211, 0.594);
+  width: 600px;
+  background-color: rgba(69, 163, 184, 0.579);
   border: 1px solid rgba(255, 255, 255, 0.327);
+  color: rgb(97, 200, 202);
   border-radius: 5px;
   font-size: 17.5px;
+  font-weight: 500;
 }
 #button {
   height: 40px;
-  width: 460px;
+  width: 600px;
   margin-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
   color: rgba(65, 132, 213, 0.807);
@@ -74,4 +90,68 @@ input:-webkit-autofill:active {
 }
 input[type="checkbox"] {
   accent-color: purple;
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+  appearance: none;
+  background-color: #7a2dad;
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 30px;
+}
+
+.checkbox-wrapper-2 .ikxBAC::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+
+.checkbox-wrapper-2 .ikxBAC,
+.checkbox-wrapper-2 .ikxBAC::after {
+  transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+}
+
+.checkbox-wrapper-2 input[type="checkbox"] {
+  cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+  background-color: #7a2dad;
+  transition-duration: 0s;
+  cursor: pointer;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+  background-color: #6e79d6;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+  background-color: #fff;
+  left: 13px;
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+  outline: 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked:hover {
+  background-color: #6e79d6;
 }
