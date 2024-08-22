@@ -29,6 +29,7 @@ const weeks = [
 
 let count = 0;
 let cont = 0;
+let clicked = false;
 
 buttonCreate.addEventListener("click", function () {
   if (input.value == "" || input.value[0] == " ") {
@@ -117,7 +118,6 @@ buttonCreate.addEventListener("click", function () {
       const theId = document.getElementById(`${idCount}s`);
       const values = inputtedValue;
       console.log(theId.innerHTML);
-
       if (
         theId.innerHTML.length == 0 ||
         theId.innerHTML.includes("<div><br></div><div><br></div>") ||
@@ -141,30 +141,34 @@ buttonCreate.addEventListener("click", function () {
             theId.style.opacity = "1";
           }
           theId.style.border = "none";
+          clicked = false;
         } else {
           theId.style.contentEditable = true;
           theId.contentEditable = true;
           theId.style.opacity = "0.7";
           theId.style.border = "1px solid aqua";
           theId.style.borderRadius = "5px";
+          clicked = true;
         }
       }
     });
     const thId = document.getElementById(`${idCount}s`);
     end_button.addEventListener("click", function () {
       const values = inputtedValue;
-      if (
-        thId.innerHTML.length == 0 ||
-        thId.innerHTML == `<div><br></div><div><br></div>` ||
-        thId.innerHTML.includes("&nbsp;")
-      ) {
-        thId.style.contentEditable = false;
-        thId.contentEditable = false;
-        thId.style.border = "none";
-        thId.innerHTML = `${values}`;
-        isCompleted();
-      } else {
-        isCompleted();
+      if (clicked == false) {
+        if (
+          thId.innerHTML.length == 0 ||
+          thId.innerHTML == `<div><br></div><div><br></div>` ||
+          thId.innerHTML.includes("&nbsp;")
+        ) {
+          thId.style.contentEditable = false;
+          thId.contentEditable = false;
+          thId.style.border = "none";
+          thId.innerHTML = `${values}`;
+          isCompleted();
+        } else {
+          isCompleted();
+        }
       }
     });
     input.value = "";
