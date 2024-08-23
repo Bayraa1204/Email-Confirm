@@ -14,16 +14,18 @@ body {
 .header {
   margin-top: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgba(65, 132, 213, 0.807);
+  font-size: 40px;
+  color: rgba(29, 169, 228, 0.807);
+  border-radius: 20px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.07);
   text-shadow: 1px 1px 2px #321ea5, 1px 1px 10px #1796e0;
 }
 .text {
-  font-size: 25px;
+  font-size: 28px;
   margin-top: 20px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: rgba(65, 132, 213, 0.807);
+  color: rgba(29, 169, 228, 0.807);
   text-shadow: 1px 1px 2px #321ea5, 1px 1px 10px #1796e0;
 }
 #email-container {
@@ -55,7 +57,7 @@ body {
   align-items: center;
 }
 .inputs {
-  height: 30px;
+  height: 32px;
   width: 600px;
   background-color: rgba(69, 163, 184, 0.579);
   border: 1px solid rgba(255, 255, 255, 0.327);
@@ -63,6 +65,7 @@ body {
   border-radius: 5px;
   font-size: 17.5px;
   font-weight: 500;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.119);
 }
 button {
   height: 40px;
@@ -163,7 +166,7 @@ input[type="checkbox"] {
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   border: 0;
   border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.119);
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
