@@ -13,10 +13,10 @@ let isGood = 0;
 function isValidEmail() {
   const isEmailValid = email.value;
   if (isEmailValid.includes("@")) {
-    alert("Email Perfect");
+    alert("Email болсон байна");
     isGood += 1;
   } else {
-    alert("Email is Invalid");
+    alert("Email болохгүй байна.");
   }
 }
 function isValidUser() {
@@ -26,9 +26,9 @@ function isValidUser() {
     isUserValid == `<div><br></div><div><br></div>` ||
     isUserValid.includes("&nbsp;")
   ) {
-    alert("Username is Empty");
+    alert("UserName хоосон байна.");
   } else {
-    alert("UserName is Perfect");
+    alert("UserName болсон байна.");
     isGood += 1;
   }
 }
@@ -36,32 +36,32 @@ function isValidPhoneNum() {
   const isPhoneValid = phoneNumber.value;
   if (itIncludes(isPhoneValid)) {
     if (isPhoneValid.length < 8) {
-      alert("Phone number is Too Short");
+      alert("Утасны дугаар богино байна.");
     } else if (isPhoneValid.length > 8) {
-      alert("Phone number is Too Long");
+      alert("Утасны дугаар арай урт байна.");
     } else {
-      alert("Phone number Perfect");
+      alert("Утасны дугаар болсон байна.");
       isGood += 1;
     }
   } else {
-    alert("Phone number is Invalid");
+    alert("Утасны дугаар болохгүй байна.");
   }
 }
 
 function isValidPass() {
   const isPassValid = password.value;
   if (isPassValid.length < 8) {
-    alert("Password is Too Short");
+    alert("Password болохгүй байна.");
   } else {
-    alert("Password Perfect");
+    alert("Password болсон байна.");
     isGood += 1;
   }
   if (itIncludes(isPassValid)) {
-    alert("Please add more symbols and letters.");
+    alert("Үсэг нэмэж бичнэ үү?");
   }
   itBig(isPassValid);
   if (isItTrue == false) {
-    alert("Add a UpperCase Letter");
+    alert("Том үсэг нэмэж бичнэ үү?");
   }
 }
 
