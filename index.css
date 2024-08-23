@@ -36,6 +36,7 @@ body {
   gap: 25px;
   align-items: center;
   position: relative;
+  border-radius: 20px;
 }
 #email-container::after {
   content: "";

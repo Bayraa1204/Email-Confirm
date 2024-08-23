@@ -12,7 +12,7 @@ let isGood = 0;
 
 function isValidEmail() {
   const isEmailValid = email.value;
-  if (isEmailValid.includes("@")) {
+  if (isEmailValid.includes("@gmail.com")) {
     alert("Email болсон байна");
     isGood += 1;
   } else {
@@ -47,11 +47,12 @@ function isValidPhoneNum() {
     alert("Утасны дугаар болохгүй байна.");
   }
 }
-
+let notWorking = false;
 function isValidPass() {
   const isPassValid = password.value;
   if (isPassValid.length < 8) {
     alert("Password болохгүй байна.");
+    notWorking = true
   } else {
     alert("Password болсон байна.");
     isGood += 1;
